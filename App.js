@@ -13,37 +13,20 @@ import {
 } from 'react-native';
 
 export default class LoginView extends Component {
-
+  
   constructor(props) {
     super(props);
-    state = {
+    this.state = {
       email   : '',
       password: '',
     }
   }
 
-  // isValid() {
-  //   const { email, password } = this.state;
-  //   let valid = false;
-
-  //   if (email.length > 0 && password.length > 0) {
-  //     valid = true;
-  //   }
-
-  //   if (email.length === 0 || email === '') {
-  //     this.setState({ error: 'You must enter an email address' });
-  //   } else if (password.length === 0) {
-  //     this.setState({ error: 'You must enter a password' });
-  //   }
-
-  //   return valid;
-  // }
-
   onSignIn() {
     const {email, password} = this.state;
-
+  console.log("email",email);
     if (email.length > 0 && password.length > 0) {
-      Alert.alert("Alert", `User email is${email}`);
+      Alert.alert("Alert", `User email is${' '}${email}`);
     }else if(email.length === 0 || email === ''|| email === null){
       Alert.alert("Alert", `You must enter an email address`);
     }else if(password.length === 0 || password === ''|| password === null){
@@ -62,7 +45,7 @@ export default class LoginView extends Component {
       <View style={styles.container}>
         <Text h2 style={styles.heading}>Login</Text>
         <View style={styles.inputContainer}>
-          <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/message/ultraviolet/50/3498db'}}/>
+          <Image style={styles.inputIcon} source={{uri: 'https://cdn.pixabay.com/photo/2016/01/10/22/52/letters-1132703_960_720.png'}}/>
           <TextInput style={styles.inputs}
               placeholder="Email"
               keyboardType="email-address"
@@ -71,7 +54,7 @@ export default class LoginView extends Component {
         </View>
         
         <View style={styles.inputContainer}>
-          <Image style={styles.inputIcon} source={{uri: 'https://png.icons8.com/key-2/ultraviolet/50/3498db'}}/>
+          <Image style={styles.inputIcon} source={{uri: 'https://cdn.pixabay.com/photo/2012/04/24/23/39/lock-41168_960_720.png'}}/>
           <TextInput style={styles.inputs}
               placeholder="Password"
               secureTextEntry={true}
